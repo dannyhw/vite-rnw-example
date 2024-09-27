@@ -1,0 +1,28 @@
+{
+  "cesVersion": "2.11.24",
+  "projectName": "vite-rnw-example",
+  "packages": [
+    {
+      "name": "nativewind",
+      "type": "styling"
+    }
+  ],
+  "flags": {
+    "noGit": false,
+    "noInstall": false,
+    "overwrite": false,
+    "importAlias": true,
+    "packageManager": "bun",
+    "eas": false
+  },
+  "packageManager": {
+    "type": "bun",
+    "version": "1.1.29"
+  },
+  "os": {
+    "type": "Darwin",
+    "platform": "darwin",
+    "arch": "arm64",
+    "kernelVersion": "24.0.0"
+  }
+}
