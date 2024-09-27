@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native';
 
 import { EditScreenInfo } from './EditScreenInfo';
+import { Button } from './Button';
 
 type ScreenContentProps = {
   title: string;
@@ -14,6 +15,7 @@ export const ScreenContent = ({ title, path, children }: ScreenContentProps) => 
       <Text className={styles.title}>{title}</Text>
       <View className={styles.separator} />
       <EditScreenInfo path={path} />
+      <Button />
       {children}
     </View>
   );

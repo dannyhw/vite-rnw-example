@@ -1,6 +1,7 @@
 {
   "name": "vite-rnw-example",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -8,31 +9,61 @@
     "prebuild": "expo prebuild",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "expo": "^51.0.34",
     "expo-status-bar": "~1.12.1",
     "nativewind": "next",
-    "react": "18.2.0",
-    "react-native": "0.74.5"
+    "react": "18.3.1",
+    "react-native": "0.74.5",
+    "react-native-web": "^0.19.12"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@chromatic-com/storybook": "^2.0.2",
+    "@storybook/addon-essentials": "^8.3.3",
+    "@storybook/addon-interactions": "^8.3.3",
+    "@storybook/addon-links": "^8.3.3",
+    "@storybook/blocks": "^8.3.3",
+    "@storybook/react": "^8.3.3",
+    "@storybook/react-vite": "^8.3.3",
+    "@storybook/test": "^8.3.3",
+    "autoprefixer": "^10.4.20",
     "@types/react": "~18.2.45",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^8.57.0",
     "eslint-config-universe": "^12.0.1",
+    "eslint-plugin-storybook": "^0.9.0",
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "typescript": "~5.3.3"
+    "storybook": "^8.3.3",
+    "tailwindcss": "^3.4.0",
+    "typescript": "~5.3.3",
+    "@vitejs/plugin-react": "^4.3.1"
   },
   "eslintConfig": {
-    "extends": "universe/native",
+    "extends": [
+      "universe/native",
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended"
+    ],
     "root": true
   },
-  "main": "node_modules/expo/AppEntry.js",
+  "resolutions": {
+    "react": "18.3.1"
+  },
+  "overrides": {
+    "react": "18.3.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "18.3.1"
+    }
+  },
   "private": true
 }
