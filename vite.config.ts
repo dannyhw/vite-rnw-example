@@ -1,8 +1,7 @@
 import react from '@vitejs/plugin-react';
-
 import { Plugin, defineConfig } from 'vite';
 
-export function reactNativeWeb(options: { babelPlugins: Array<any> }): Plugin {
+export function reactNativeWeb(options: { babelPlugins: any[]; babelPresets: any[] }): Plugin {
   const plugin: Plugin = {
     name: 'vite:react-native-web',
     enforce: 'pre',
@@ -13,8 +12,8 @@ export function reactNativeWeb(options: { babelPlugins: Array<any> }): Plugin {
             jsxRuntime: 'automatic',
             jsxImportSource: 'nativewind',
             babel: {
-              plugins: ['@babel/plugin-proposal-export-namespace-from'],
-              presets: ['nativewind/preset'],
+              plugins: options.babelPlugins,
+              presets: options.babelPresets,
             },
           }),
         ],
@@ -23,11 +22,11 @@ export function reactNativeWeb(options: { babelPlugins: Array<any> }): Plugin {
           'global.__x': {},
           _frameTimestamp: undefined,
           _WORKLET: false,
-          __DEV__: `${env.mode === 'development' ? true : false}`,
+          __DEV__: `${env.mode === 'development'}`,
           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || env.mode),
         },
         optimizeDeps: {
-          include: ['react-native-reanimated', 'nativewind', 'react-native-css-interop'],
+          include: [/* 'react-native-reanimated',  */ 'nativewind', 'react-native-css-interop'],
           esbuildOptions: {
             jsx: 'transform',
             resolveExtensions: [
@@ -40,7 +39,6 @@ export function reactNativeWeb(options: { babelPlugins: Array<any> }): Plugin {
               '.ts',
               '.tsx',
               '.mjs',
-              // '.css',
             ],
             loader: {
               '.js': 'jsx',
@@ -58,7 +56,6 @@ export function reactNativeWeb(options: { babelPlugins: Array<any> }): Plugin {
             '.ts',
             '.tsx',
             '.mjs',
-            '.css',
           ],
           alias: {
             'react-native': 'react-native-web',
@@ -74,10 +71,8 @@ export function reactNativeWeb(options: { babelPlugins: Array<any> }): Plugin {
 export default defineConfig({
   plugins: [
     reactNativeWeb({
-      babelPlugins: [
-        '@babel/plugin-proposal-export-namespace-from',
-        'react-native-reanimated/plugin',
-      ],
+      babelPlugins: [],
+      babelPresets: [],
     }),
   ],
 });
