@@ -14,18 +14,18 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "expo": "^51.0.34",
-    "expo-status-bar": "~1.12.1",
+    "expo": "^53.0.9",
+    "expo-status-bar": "~2.2.3",
     "nativewind": "^4.1.23",
-    "react": "18.3.1",
-    "react-native": "0.74.5",
-    "react-native-web": "^0.19.12",
-    "react-native-reanimated": "3.16.2",
-    "react-native-safe-area-context": "^5.4.0"
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "^5.4.0",
+    "react-native-web": "^0.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@chromatic-com/storybook": "^2.0.2",
+    "@babel/core": "^7.26.0",
+    "@chromatic-com/storybook": "^3.2.6",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
@@ -33,39 +33,26 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-native-web-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
-    "autoprefixer": "^10.4.20",
-    "@types/react": "~18.2.45",
+    "@types/react": "~19.0.10",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-config-universe": "^12.0.1",
-    "eslint-plugin-storybook": "^0.9.0",
+    "eslint-plugin-storybook": "^0.12.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "storybook": "^8.6.12",
     "tailwindcss": "^3.4.17",
-    "typescript": "~5.3.3",
-    "@vitejs/plugin-react": "^4.3.1"
+    "typescript": "~5.8.3"
   },
   "eslintConfig": {
     "extends": [
       "universe/native",
-      "plugin:storybook/recommended",
-      "plugin:storybook/recommended",
       "plugin:storybook/recommended"
     ],
     "root": true
-  },
-  "resolutions": {
-    "react": "18.3.1"
-  },
-  "overrides": {
-    "react": "18.3.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "react": "18.3.1"
-    }
   },
   "private": true
 }
