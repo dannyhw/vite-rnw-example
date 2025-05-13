@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/react-native-web-vite';
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.mdx', '../components/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -11,14 +11,22 @@ const config: StorybookConfig = {
   ],
 
   framework: {
-    name: '@storybook/react-vite',
-    options: {},
+    name: '@storybook/react-native-web-vite',
+    options: {
+      pluginReactOptions: {
+        jsxRuntime: 'automatic',
+        jsxImportSource: 'nativewind',
+        babel: {
+          plugins: ['react-native-reanimated/plugin'],
+        },
+      },
+    },
   },
 
   docs: {},
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript'
-  }
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 export default config;
